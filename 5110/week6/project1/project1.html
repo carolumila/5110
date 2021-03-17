@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Caroline Umila">
+    <meta name="description" content="Project 1">
+    <title>Project 1</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #slides {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            margin-bottom: 5px;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+        <button id="oneNext">Slideshow One +</button>
+        <button id="onePrev">Slideshow One -</button>
+    </div>
+    <div class="buttons">
+        <button id="twoNext">Slideshow Two +</button>
+        <button id="twoPrev">Slideshow Two -</button>
+    </div>
+    <div class="buttons">
+        <button id="threeNext">Slideshow Three +</button>
+        <button id="threePrev">Slideshow Three -</button>
+    </div>
+
+    <ol id="slides">
+        <div id="slideshowOne"></div>
+        <div id="slideshowTwo"></div>
+        <div id="slideshowThree"></div>
+    </ol>
+</body></html>
+<script src="js/project1.js"></script>
+

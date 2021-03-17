@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "Lato";
+    src: url("fonts/pair2/Lato/Lato-Regular.ttf");
+}
+@font-face {
+    font-family: "Oswald";
+    src: url("fonts/pair2/Oswald/Oswald-VariableFont_wght.ttf");
+}
+
+html {
+    background-color: #92a8d1;
+    font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100%;
+    border: groove #034f84 20px;
+    padding: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald, sans-serif;
+}
+body {
+    text-align: center;
+    color: #f7cac9;
+    min-height: 800px;
+    
+}
+#construction {
+    font-size: 300%;
+    font-weight: 300;
+}
+
+/* links */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.links {
+    border: dashed white 3px;
+    background-color: #f7786b;
+    color: white;
+    max-width: 150px;
+    margin: auto;
+}

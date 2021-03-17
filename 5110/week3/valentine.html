@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Caroline Umila">
+    <meta name="description" content="Build a Valentine">
+    <title>Be my Valentine?</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+        /* Create and style and heart */
+        .heart {
+            background-color: red;
+            display: inline-block;
+            height: 50px;
+            margin: 0 10px;
+            position: relative;
+            top: 0;
+            transform: rotate(-45deg);
+            position: absolute;
+            left: 48%;
+            top: 25em;
+            width: 50px;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 50px;
+            position: absolute;
+            width: 50px;
+        }
+
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 25px;
+            top: 0;
+        }
+        
+        /* Create the heartbeat */
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            20% {
+                transform: scale(1.25) rotate(-45deg);
+            }
+            40% {
+                transform: scale(1.5) rotate(-45deg);
+            }
+        }
+        
+        /* assign animation to heart */
+        .heart {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        /* extra CSS */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: thistle;
+            border: dotted 5px lavender;
+            min-height: auto;
+            line-height: 2;
+        }
+        p {
+            text-align: center;
+            margin-top: 5em;
+            color: lavenderblush;
+            font-weight: bold;
+        }
+        .signature {
+            margin-top: 30em;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Roses are red.<br>Violets are blue.<br>I hope you like this valentine,<br>because I coded it just for you!</p>
+
+    <div class="heart"></div>
+    
+    <p class="signature">Love, Caroline</p>
+</body>
+
+</html>

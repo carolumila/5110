@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "myFont";
+  src: url("fonts/3Dumb.ttf");
+}
+
+/*** general CSS ***/
+body {
+    background-color: cadetblue;
+}
+
+/*** Style for exercise 1 ***/
+ul {
+    padding-left: 2rem;
+    list-style-type: none;
+}
+
+ul li {
+    padding-left: 1.5rem;
+    padding-bottom: .5rem;
+    background-image: url(images/12-125057_snowflake-non-copyrighted-hd-png-download.png);
+    background-position: 0 0;
+    background-size: 15px 18px;
+    background-repeat: no-repeat;
+}
+
+/*** Style for exercise 3 ***/
+#links li {
+    padding-bottom: 2em;
+}
+#links a {
+    text-decoration: none;
+    border-radius: 3em;
+    width: 3px;
+    height: 5px;
+    border: dashed green 5px;
+    padding: 5px;
+    color: aqua;
+}
+
+#links a:hover {
+    font-size: 500%;
+    background-color: deeppink;
+    border-left: solid red 5px;
+    border-top: solid orange 5px;
+    border-right: solid yellow 5px;
+    border-bottom: solid blue 5px;
+}
+#links a:active {
+    background-color: gold;
+    color: forestgreen;
+}
+#links a:focus {
+    background-color: gold;
+}
+#links a:visited {
+    color: coral;
+}
+
+/*** Style for exercise 4 ***/
+#fontexample {
+    font-family: myFont;
+    background-color: antiquewhite;
+    padding: 1em;
+}
+

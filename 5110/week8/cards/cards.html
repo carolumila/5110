@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Caroline Umila">
+    <meta name="description" content="Homework Exercise: Let's play cards!">
+    <title>Let's Play Cards!</title>
+    <link rel="shortcut icon" href="pix/favicon.ico">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!--- FAVICON: Copyright 2020 Twitter, Inc and other contributors
+    Code licensed under the MIT License: http://opensource.org/licenses/MIT
+    Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/ --->
+    <style>
+        html {
+            background-image: url(pix/felt4.jpg);
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        img {
+            margin: 10px;
+        }
+
+        div {
+            min-height: 225px;
+        }
+        
+        header {
+            background-color: darkgreen;
+            margin: 0;
+            padding-top: 15px;
+            padding-bottom: 5px;
+        }
+        
+        body, h1 {
+            margin: 0;
+        }
+        
+        #error {
+            text-decoration: underline;
+            font-weight: bolder;
+            font-size: 150%;
+        }
+        
+        #instructions {
+            background-color: darkgreen;
+            padding: 5px;
+        }
+
+        .label {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Let's Play Cards!</h1>
+        <hr>
+        <p id="instructions">To Play: Press shuffle for a new hand of cards. Double click on a card to move it to the "to discard" section. Use middle button to discard those in the "to discard" section and draw back up to 5 cards!</p>
+    </header>
+    <br>
+    <button onclick="shuffle()">shuffle</button>
+    <button onclick="addBack()">discard and add new cards to hand</button>
+    <button onclick="reset()">reset deck</button><br>
+    <p id="error"></p>
+    <p class="label">HAND</p>
+    <div id="deck"></div> <br>
+    <p class="label">to discard:</p>
+    <div id="discard"></div>
+
+
+</body></html>
+<script src="js/cards.js"></script>

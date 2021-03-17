@@ -1,0 +1,81 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+
+/* Gradients */
+body {
+    background-image: linear-gradient(127deg, peachpuff, lavender, lightblue, teal, cornflowerblue, crimson, darksalmon);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#radial {
+    background:
+        radial-gradient(circle at 50% 0,
+            rgba(102, 102, 255, .5),
+            rgba(102, 102, 255, 0) 70.71%),
+        radial-gradient(circle at 6.7% 75%,
+            rgba(0, 204, 153, .5),
+            rgba(0, 204, 153, 0) 70.71%),
+        radial-gradient(circle at 93.3% 75%,
+            rgba(255, 80, 80, .5),
+            rgba(0, 255, 0, 0) 70.71%) beige;
+    border-radius: 50%;
+    height: 15em;
+    width: 15em;
+    border: 1px solid black;
+}
+
+/* Pseudo Element Practice */
+h1 {
+    font-size: 50px;
+}
+
+header::first-letter {
+    font-size: 44px;
+}
+
+header::first-line {
+    color: #ff0000;
+    color: rgba(255, 0, 0);
+}
+
+/* Rotation!*/
+h2 {
+    transform: rotate(10deg);
+}
+
+/* Take the challenge! */
+#exampleOne {
+    font-family: 'Chela One', cursive;
+    font-size: 2rem;
+    text-align: center;
+
+    background-color: darkseagreen;
+    border-style: groove;
+    border-width: .5em;
+    border-color: mediumblue;
+    border-radius: 1em;
+
+    padding: 1em;
+    width: 14em;
+}
+
+#exampleTwo {
+    font-family: 'Chela One', cursive;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 0 grey;
+
+    background-image: linear-gradient(black, red);
+    background-clip: padding-box;
+    border-style: dashed;
+    border-width: .5em;
+    border-color: mediumblue;
+    border-radius: 1em;
+
+    padding: 1em;
+    width: 14em;
+    margin-left: 1.5em;
+
+}

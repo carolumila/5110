@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Caroline Umila">
+        <meta name="description" content="Homework Exercise: Trivia">
+        <title>Trivia!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            html {
+                background-color: #bccad6;
+                color: #667292;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            section {
+                
+                background-color: #f1e3dd;
+                min-height: 300px;
+                max-width: 1000px;
+                min-width: 500px;
+                padding: 10px;
+                
+                border: groove 5px #8d9db6;
+            }
+            #container {
+                display: flex;
+                justify-content: center;
+            }
+            div {
+                margin: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Trivia!</h1>
+        <p id="instructions">click "New Question" to begin!</p>
+        <main id="container">
+            <section>
+                <button onclick="qa()">New Question</button>
+                <button onclick="showAnswer()">Show Answer</button><br>
+                <br>
+                <div id="category"></div>
+                <div id="question"></div><br>
+                <div id="answer"></div>
+            </section>
+        </main>
+    </body>
+</html>
+<script>
+    var question = document.querySelector('#question');
+    var answer = document.querySelector('#answer');
+    var category = document.querySelector('#category');
+    var theAnswer = "";
+    
+    var instructions = document.querySelector('#instructions');
+    
+    function qa() {
+        $.getJSON('http://jservice.io/api/random', function(data) {
+            question.innerHTML = "<b>Question:</b><br> " + data[0].question;
+            category.innerHTML = "<b>Category:</b><br> " + data[0].category['title'];
+            theAnswer = data[0].answer;
+        });
+        
+        instructions.innerHTML = "";
+        answer.innerHTML = "";
+    } // qa
+    
+    function showAnswer() {
+        answer.innerHTML = "<b>Answer: </b><br>" + theAnswer;
+    } // showAnswer
+</script>

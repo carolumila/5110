@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Caroline Umila">
+        <meta name="description" content="Homework Exercise: Display Multiple Random Questions (and answers)">
+        <title>Advanced Trivia!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            html {
+                background-color: #8ac4d0;
+                color: #28527a;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            section {
+                
+                background-color: #fbeeac;
+                min-height: 300px;
+                max-width: 1000px;
+                min-width: 500px;
+                padding: 10px;
+                
+                border: groove 5px #f4d160;
+            }
+            #container {
+                display: flex;
+                justify-content: center;
+            }
+            div {
+                margin: 10px;
+                text-align: left;
+            }
+            h3 {
+                display: inline;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Trivia!</h1>
+        <p id="instructions">click "Load new question set" to begin!</p>
+        <main id="container">
+            <section>
+                <button onclick="qa()">Load new question set</button>
+                <div id="maindiv"></div>
+            </section>
+        </main>
+    </body>
+</html>
+<script>
+    var divLoad = document.querySelector('#maindiv');
+    var theAnswer = [];
+    
+    var instructions = document.querySelector('#instructions');
+    
+    function qa() {
+        divLoad.innerHTML = "";
+        $.getJSON('http://jservice.io/api/random?count=10', function(data) {
+            for (var i = 0; i < 10; i++) {
+                divLoad.innerHTML += "<h3>Category "+(i+1)+": "+data[i].category.title+"</h3>";
+                divLoad.innerHTML += "<button onclick='showAnswer("+i+")'>Show Answer</button>";
+                divLoad.innerHTML += "<div>Question: "+data[i].question+"</div>";
+                divLoad.innerHTML += "<div id='damnAnswer"+i+"'></div><hr>";
+                theAnswer.push(data[i].answer);
+            } // for
+        });
+        
+        instructions.innerHTML = "";
+    } // qa
+    
+    function showAnswer(b) {
+        let whatever = "#damnAnswer"+b;
+        whatever = document.querySelector(whatever);
+        whatever.innerHTML = "<b>The answer is "+theAnswer[b]+"</b>";
+    } // showAnswer
+</script>
