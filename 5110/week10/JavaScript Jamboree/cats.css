@@ -1,0 +1,37 @@
+html {
+    text-align: center;
+    font-family: sans-serif;
+    background-image: url(pix/MyFavoriteThingsCatCollage_jimmiehomeschoolmom.jpg);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1em;
+    
+}
+
+.displayLeft {
+    text-align: left;
+    width: 500px;
+}
+
+.questions {
+    text-align: center;
+}
+
+#showMore {
+}
+
+input {
+    margin: 5px;
+}
+
+body {
+    max-width: 810px;
+    margin: auto;
+    background-color: navajowhite;
+    padding: 3em;
+}

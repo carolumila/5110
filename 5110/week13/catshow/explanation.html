@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Explanation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">start over</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li><a href="index.html">American Bobtail</a></li>
+						<li><a href="mainecoon.html">Maine Coon</a></li>
+						<li><a href="malayan.html">Malayan</a></li>
+						<li><a href="burmese.html">Burmese</a></li>
+						<li><a href="snowshoe.html">Snowshoe</a></li>
+						<li class="active"><a href="explanation.html">Explanation</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+						<section class="post">
+							<header class="major">
+								<span class="date">April 14, 2021</span>
+								<h1>Project 6:<br />
+								Cat Components</h1>
+								<p>This website is a project for my NMIX 5110: Advanced New Media Production class.<br />
+								This page is a "behind the scenes" of how this site works!<br />
+								</p>
+							</header>
+							<div class="image main"><a href="https://mynmi.net/" target="_blank"><img src="images/nmi_logo.jpg" alt="UGA New Media Institue Logo" /></a></div>
+							<p>This website began as a basic html page created by Professor Emuel. Using its connected JavaScript file, it featured the name of a breed and a single button labeled "slideshow" which would cycle through and display images from the Cat API for this specific breed. It did this though calling the loadNextImage function which retrieved data from a specified URL. We provided an argument called breedID to specify which URL to use.</p>
+							<div class="image main" style="border: 5px solid #3d0c02;"><img src="images/start.jpg"></div>
+							<p>Within the loadNextImage function, we then called another function named slideshow(). This function was connected to the button, and every time it was called, it would set the image on screen to a new image from the API.</p>
+							<p>My task for this project was to create a website showcasing multiple breeds and their related information from the Cat API. I did this through utilizing Vue.js components and props. Vue.js is a framework for building user interfaces, and Vue components are custom elements located inside of a root Vue instance. I took the original code from the JavaScript file and adapted it to create a Vue component which encapsulated the functions, button, and code to retrieve the data from the API. The breed of which to pull data about is specified through a prop which is a sort of variable for a component. It is passed into the component when a new instance is created. I then added more information about the given breed from the API to be displayed within the component and used various div elements and css to format the bar graphs according to the data provided by the API. Finally, to make the website more aesthetically appealing, I used a template from HTML5 UP to bring everything together and separate different instances of the slideshows into different tabs. This resulted in the website that you see now.</p>
+						</section>	
+						
+						<!-- Lists -->
+						<div class="row">
+							<div class="col-6 col-12-small">
+
+								<h3>Related Links</h3>
+								<ul>
+									<li><a href="https://thecatapi.com" target="_blank">The Cat API</a></li>
+									<li><a href="https://html5up.net/massively" target="_blank">Massively by HTML5 UP</a></li>
+									<li><a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js</a></li>
+								</ul>
+
+								<ul class="alt">
+									<li><a href="https://carolineumila.com" target="_blank">My Website</a></li>
+									<li><a href="https://mynmi.net" target="_blank">UGA New Media Institute</a></li>
+									<li><a href="startingcode/catshow.html" target="_blank">Check out the starting code!</a></li>
+								</ul>
+
+							</div>
+						</div>
+
+					</div>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

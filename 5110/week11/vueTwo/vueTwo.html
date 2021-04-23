@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Caroline Umila">
+    <meta name="description" content="Vue Workbook part two">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Class Photos</title>
+</head>
+
+<body>
+    <div id="us">
+        <!--
+        // part 1
+        <div v-for="student in yall">
+            <h2>{{student.stu_name}} {{student.last_name}}</h2>
+            <img :src="dompart1+student.domain+dompart2" height=300px>
+            <p>{{student.fact}}</p>
+        </div>
+
+        // part 2
+        <button v-on:click="showpic">Classmates</button>
+        <h2>{{stuname}}</h2>
+-->
+        <img :src="image" height=500px><br>
+        <select v-model="oswald" v-on:change="displayImage()">
+            <option v-for="student in yall" :value="dompart1 + student.domain + dompart2"> {{student.stu_name}} </option>
+        </select>
+        <p>{{oswald}}</p>
+    </div>
+</body></html>
+<script src="youguys.js"></script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Caroline Umila">
+    <meta name="description" content="Project 4: Extract json data about YOU and your classmates">
+    <title>Spring 2021 Class List!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        html {
+            text-align: center;
+            font-family: sans-serif;
+            background-color: #ff6f69;
+            color: #c83349;
+        }
+        img {
+            max-height: 300px;
+            max-width: 350px;
+        }
+        
+        div {
+            width: 400px;
+            border: groove 5px #96ceb4;
+            margin: 5px;
+            padding: 5px;
+            background-color: #ffeead;
+        }
+        
+        #classContainer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Spring 2021 NMIX 5110/7110 Class List</h1>
+    <section id="classContainer"></section>
+</body>
+
+</html>
+<script>
+        let classContainer = document.querySelector('#classContainer');
+    
+        $( document ).ready(function() {
+            $.getJSON('https://raw.githubusercontent.com/emuel/api/master/5110', function(data) {
+                for (var i=0; i< data.length; i++) {
+                    let name = data[i].stu_name + " " + data[i].last_name;
+                    let fact = data[i].fact;
+                    
+                    classContainer.innerHTML += "<div><h2>" + name + "</h2><img src=http://" + data[i].domain + "/images/me.jpg><h3>Fun Fact about " + data[i].stu_name + ":</h3><p>" + fact + "</p></div>";
+                } // for
+            });
+        })
+</script>

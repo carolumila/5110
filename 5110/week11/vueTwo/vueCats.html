@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats!</title>
+    <style>
+        html {
+            text-align:center;
+            background-color: aliceblue;
+            font-family: sans-serif;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="cats">
+        <button v-on:click="displayImage()">Show me another cat!</button><br>
+        <img :src="image" height=500px>
+    </div>
+</body>
+</html>
+<script src="cats.js"></script>

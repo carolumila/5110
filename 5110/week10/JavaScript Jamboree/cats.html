@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Caroline Umila">
+    <meta name="description" content="JavaScript Jamboree!">
+    <meta name="description" content="Background Image: 'my favorite things cats collage' by jimmiehomeschoolmom is licensed with CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/">
+    <title>Cat Quiz!</title>
+    <link rel="icon" href="pix/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="cats.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the Cat Quiz!</h1>
+        <p>Select your favorite cat breed and test your knowledge to see how much you know!<br> Type in: 1, 2, 3, or 4 and check your answer!</p>
+    </header>
+    <hr>
+    <p>Select your favorite cat breed:</p>
+    <select id="breedSelect" onchange="loadQuiz()"></select>
+    <section id="container"></section>
+    <div id=catInfo></div>
+
+</body></html>
+<script src="js/cats.js"></script>

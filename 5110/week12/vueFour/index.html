@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Caroline Umila</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img :src="avatar" alt="" /></span>
+							<h1 id="title">{{yourName}}</h1>
+							<p>{{description}}</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">{{linkOne}}</span></a></li>
+                                <li><a href="#about" id="about-link"><span class="icon solid fa-user">{{link3}}</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">{{link2}}</span></a></li>
+                                <li><a href="#list"><span class="icon solid fa-list">{{link5}}</span></a></li>
+                                <li><a href="#conditional"><span class="icon solid fa-code">{{link6}}</span></a></li>
+                                <li><a href="#function"><span class="icon solid fa-lightbulb">{{link7}}</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">{{link4}}</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a :href="linkedin" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                            <li><a href="#" class="icon solid fa-leaf"><span class="label">Leaf</span></a></li>
+							<li><a :href="github" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+							<li><a :href="email" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">{{name}}</h2>
+								<p>{{description}}</p>
+							</header>
+
+							<footer>
+								<a href="#about" class="button scrolly">{{buttonValue}}</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+							<a href="#" class="image featured"><img :src="image" alt=""></a>
+
+							<p>{{description}}</p>
+
+						</div>
+					</section>
+                
+                <!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<portfolio></portfolio>
+					</section>
+                
+                <!-- List -->
+                <section id="list">
+                    <div class="container">
+                        <h3>Checkout these great local restaurants in Athens:</h3><br>
+                        <ul style="width:200px; margin: auto;">
+                            <li v-for="favorite in favorites">{{favorite}}</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Conditional -->
+                <section id="conditional">
+                    <div class="container">
+                        <h3>Q &amp; A time!</h3>
+                        What is the name of my teacher?<br>
+                        <!--<input v-model="teacherName" style="margin: 5px;"> -->
+                        <p v-on:click="teacherName='John'">John</p>
+                        <p v-on:click="teacherName='Emuel'">Emuel</p>
+                        <p v-on:click="teacherName='Leah'">Leah</p>
+                        <p v-on:click="teacherName='Kyla'">Kyla</p>
+                        <p v-if="teacherName == 'Emuel' ">Correct. The teacher's name is {{teacherName}}</p><br>
+                        <p v-if="teacherName != 'Emuel' && teacherName != '' ">Not yet. Keep Trying</p>
+                        
+                        What is the name of my cat?<br>
+                        <input v-model="petName">
+                        <p v-if="petName == 'Nellie' || petName == 'nellie'">That's right! She's such a cutie!! <br><img src="images/sleepynellie.jpg" height="500px"></p>
+                        <p v-if="petName != 'Nellie' && petName != 'nellie' && petName != ''">Nope! try again</p>
+                    </div>
+                </section>
+                
+                <!-- Function -->
+                <section id="function">
+                    <div class="container">
+                        <h3>Hover over a selection to change the color or width of the box!</h3><br>
+                        <div id='colorDiv' :style="{ backgroundColor: bgColor, width: size + 'px'}">
+                            <p v-for="color in colors" @mouseover='changeColor(color)'> {{color}} </p>
+                            <p v-for="each in widths" @mouseover='changeWidth(each)'>{{each}} pixels</p>
+                        </div>                        
+                    </div>
+                </section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p>{{description}}</p>
+
+							<form method="post" action="#">
+								<div class="row">
+									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="col-12">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="col-12">
+										<input disabled="true" type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+            <script src="assets/js/newVue.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+        
+        <!-- Import Components -->
+            <script src="assets/js/portfolio.js"></script>
+        
+
+	</body>
+</html>
